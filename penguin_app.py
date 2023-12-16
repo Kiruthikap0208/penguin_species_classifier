@@ -52,7 +52,7 @@ rf_clf = RandomForestClassifier(n_jobs = -1)
 rf_clf.fit(X_train, y_train)
 rf_clf_score = rf_clf.score(X_train, y_train)
 
-@st.cache_data()
+@st.cache()
 def prediction(model, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex) :
   species_type = model.predict([[island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex]])
   species_type = species_type[0]
